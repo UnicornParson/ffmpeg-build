@@ -2,7 +2,7 @@
 set -e
 export FFBASE=`pwd`
 rm -vf $FFBASE/ffmpeg_bin/ff*
-cd $FFBASE/ffmpeg_orig
+cd $FFBASE/ffmpeg_src
 
 PATH="$FFBASE/ffmpeg_bin:$PATH" PKG_CONFIG_PATH="$FFBASE/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$FFBASE/ffmpeg_build" \
@@ -27,6 +27,6 @@ PATH="$FFBASE/ffmpeg_bin:$PATH" PKG_CONFIG_PATH="$FFBASE/ffmpeg_build/lib/pkgcon
   --enable-libx264 \
   --enable-libx265 \
   --enable-nonfree
-PATH="$FFBASE/ffmpeg_bin:$PATH" make -j10
+PATH="$FFBASE/ffmpeg_bin:$PATH" make -j4
 PATH="$FFBASE/ffmpeg_bin:$PATH" make install
 

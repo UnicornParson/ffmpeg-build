@@ -1,0 +1,5 @@
+CMakeCache.txt
+FFmpegTestApp
+Makefile
+CMakeFiles/**/*
+cmake_install.cmake
